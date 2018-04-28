@@ -31,6 +31,7 @@ app.get('/',(req,res)=>{
 //       'biking']
 //       }
 //     );
+//
 res.render('home.hbs',{
   pageTitle : 'Home Page',
   pageConent : 'Welcome to home page'
