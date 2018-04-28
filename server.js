@@ -16,6 +16,9 @@ app.use((req, res, next) =>{
   });
   next();
 });
+//app.use((req,res,next)=>{
+//  res.render('maintainance.hbs');
+//});
 app.use(express.static(__dirname + '/public')); //middleware
 
 hbs.registerHelper('getCurrentYear', () =>{
@@ -37,8 +40,14 @@ app.get('/',(req,res)=>{
 //
 res.render('home.hbs',{
   pageTitle : 'Home Page',
-  pageConent : 'Welcome to home page'
+  pageContent : 'Welcome to home page'
 });
+ });
+ app.get('/project',(req,res)=>{
+   res.render('project.hbs',{
+     pageTitle : 'Project page',
+     pageContent : 'I have completed two projects'
+   });
  });
 app.get('/about',(req,res)=>{
   res.render('about.hbs', {
